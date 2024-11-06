@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import data from "../../assets/dada/portfolioData";
 import Modal from './Modal';
-import Header from '../Header/Header'
+import Header from '../Header/Header';
+
 const Portfolio = () => {
     const [nextItems, setNextItems] = useState(6);
     const [portfolios, setPortfolios] = useState(data);
@@ -29,33 +30,59 @@ const Portfolio = () => {
     return (
         <div id="Portfolio">
             <div className="container">
-            <div className="header" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#4CAF50', padding: '10px' }}>
-    <h3 className="title" style={{ color: '#FFFFFF', margin: 0 }}>Certification</h3>
-</div>
+                {/* Header Section */}
+                <div className="header" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#4CAF50', padding: '10px' }}>
+                <h2 className="title" style={{ fontFamily: 'Arial, sans-serif', fontStyle: 'italic', color: '#FFFFFF', margin: 0 }}>Credentials & Certificates</h2>
 
+                </div>
+
+                {/* Portfolio Grid Section */}
                 <div className='portfolio-grid'>
-                    {
-                        portfolios?.slice(0, nextItems)?.map((portfolio, index) => (
-                            <div key={index} className='portfolio-item'>
-                                <figure>
-                                    <img className="portfolio-img" src={portfolio.imgUrl} alt="" />
-                                </figure>
-                                <div className='overlay'>
-                                    <div className='overlay-content'>
-                                        <button onClick={() => showModalHandler(portfolio.id)} className='details-button'>
-                                            See details
-                                        </button>
-                                    </div>
+                    {/* Display first 3 items in the top section */}
+                    {portfolios?.slice(0, 3)?.map((portfolio, index) => (
+                        <div key={index} className='portfolio-item'>
+                            <figure>
+                                <img className="portfolio-img" src={portfolio.imgUrl} alt="" />
+                            </figure>
+                            <div className='overlay'>
+                                <div className='overlay-content'>
+                                    <button onClick={() => showModalHandler(portfolio.id)} className='details-button'>
+                                        See details
+                                    </button>
                                 </div>
                             </div>
-                        ))
-                    }
+                        </div>
+                    ))}
                 </div>
-                
+
+                {/* Display next 2 items in the bottom section */}
+                <div className='portfolio-grid'>
+                    {portfolios?.slice(3, 5)?.map((portfolio, index) => (
+                        <div key={index} className='portfolio-item'>
+                            <figure>
+                                <img className="portfolio-img" src={portfolio.imgUrl} alt="" />
+                            </figure>
+                            <div className='overlay'>
+                                <div className='overlay-content'>
+                                    <button onClick={() => showModalHandler(portfolio.id)} className='details-button'>
+                                        See details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Modal that appears below the header */}
+                {showModal && (
+                    <div className="modal-container">
+                        <Modal setShowModal={setShowModal} activeID={activeID} />
+                    </div>
+                )}
+
             </div>
-            {
-                showModal && <Modal setShowModal={setShowModal} activeID={activeID} />
-            }
+
+            {/* Styles */}
             <style jsx>{`
                 #Portfolio {
                     font-family: Arial, sans-serif;
@@ -79,30 +106,11 @@ const Portfolio = () => {
                     color: #333;
                 }
 
-                .tabs {
-                    display: flex;
-                    gap: 1rem;
-                }
-
-                .tab-button {
-                    border: 1px solid #ccc;
-                    padding: 0.5rem 1rem;
-                    border-radius: 8px;
-                    background-color: #f8f8f8;
-                    color: #333;
-                    cursor: pointer;
-                    transition: background-color 0.3s, color 0.3s;
-                }
-
-                .tab-button.active {
-                    background-color: #333;
-                    color: #fff;
-                }
-
                 .portfolio-grid {
                     display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    grid-template-columns: repeat(3, 1fr);
                     gap: 1rem;
+                    margin-bottom: 2rem;
                 }
 
                 .portfolio-item {
@@ -157,6 +165,32 @@ const Portfolio = () => {
 
                 .details-button:hover {
                     background-color: #555;
+                }
+
+                /* Modal Container */
+                .modal-container {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+                    z-index: 9999;
+                    padding-top: 60px;
+                }
+
+                /* Modal */
+                .modal-content {
+                    background-color: #fff;
+                    border-radius: 8px;
+                    padding: 20px;
+                    width: 70%;
+                    max-width: 500px;
+                    text-align: center;
+                    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
                 }
             `}</style>
         </div>

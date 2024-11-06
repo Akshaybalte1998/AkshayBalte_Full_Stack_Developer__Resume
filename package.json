@@ -2,7 +2,8 @@
   "name": "AkshayBalte_Full_Stack_Developer__Resume ",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Akshaybalte1998.github.io/AkshayBalte_Full_Stack_Developer__Resume ",
+ "homepage": "https://Akshaybalte1998.github.io/AkshayBalte_Full_Stack_Developer__Resume"
+,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -22,7 +23,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+  "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

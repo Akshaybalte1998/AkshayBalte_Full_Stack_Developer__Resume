@@ -50,79 +50,80 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" style={styles.container}>
-      <h2 style={styles.heading}>Let's Talk</h2>
-      {alert && (
-        <div style={{ ...styles.alert, ...(alert.includes('error') ? styles.alertError : {}) }}>
-          {alert}
+    <div style={globalStyles}>
+      <section id="contact" style={styles.container}>
+        <h2 style={styles.heading}>Let's Talk</h2>
+        {alert && (
+          <div style={{ ...styles.alert, ...(alert.includes('error') ? styles.alertError : {}) }}>
+            {alert}
+          </div>
+        )}
+        <div style={styles.formWrapper}>
+          <form onSubmit={sendEmail}>
+            <input
+              type="text"
+              name="name"
+              placeholder='Your Name'
+              value={formData.name}
+              onChange={handleInputChange}
+              style={styles.inputField}
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder='Your Email'
+              value={formData.email}
+              onChange={handleInputChange}
+              style={styles.inputField}
+              required
+            />
+            <input
+              type="text"
+              name="subject"
+              placeholder='Subject'
+              value={formData.subject}
+              onChange={handleInputChange}
+              style={styles.inputField}
+              required
+            />
+            <textarea
+              name="message"
+              rows={5}
+              placeholder='Your Message'
+              value={formData.message}
+              onChange={handleInputChange}
+              style={styles.textarea}
+              required
+            />
+            <button
+              type="submit"
+              style={styles.button}
+              onMouseEnter={(e) => e.target.style.backgroundColor = styles.buttonHover.backgroundColor}
+              onMouseLeave={(e) => e.target.style.backgroundColor = styles.button.backgroundColor}
+            >
+              Send Message
+            </button>
+          </form>
         </div>
-      )}
-      <div style={styles.formWrapper}>
-        <form onSubmit={sendEmail}>
-          <input
-            type="text"
-            name="name"
-            placeholder='Your Name'
-            value={formData.name}
-            onChange={handleInputChange}
-            style={styles.inputField}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder='Your Email'
-            value={formData.email}
-            onChange={handleInputChange}
-            style={styles.inputField}
-            required
-          />
-          <input
-            type="text"
-            name="subject"
-            placeholder='Subject'
-            value={formData.subject}
-            onChange={handleInputChange}
-            style={styles.inputField}
-            required
-          />
-          <textarea
-            name="message"
-            rows={5}
-            placeholder='Your Message'
-            value={formData.message}
-            onChange={handleInputChange}
-            style={styles.textarea}
-            required
-          />
-          <button
-            type="submit"
-            style={styles.button}
-            onMouseEnter={(e) => e.target.style.backgroundColor = styles.buttonHover.backgroundColor}
-            onMouseLeave={(e) => e.target.style.backgroundColor = styles.button.backgroundColor}
-          >
-            Send Message
-          </button>
-        </form>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 
 // Define styles within the same file
 const styles = {
   container: {
-    padding: '4rem 1rem',
+    width: '100%',
     maxWidth: '900px',
+    padding: '2rem',
     margin: '0 auto',
     backgroundColor: '#ffdab9',
     borderRadius: '12px',
     boxShadow: '0 8px 24px rgba(0, 0, 0, 0.2)',
-    position: 'relative',
-    zIndex: 1,
   },
   heading: {
-    color: '#ff5733',  // Vibrant color for the heading
+    color: '#ff5733',
     fontWeight: '700',
     fontSize: '2.5rem',
     marginBottom: '1rem',
@@ -142,7 +143,7 @@ const styles = {
     outline: 'none',
     fontSize: '1rem',
     transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
-    backgroundColor: '#f0f4ff', // Soft blue background for input fields
+    backgroundColor: '#f0f4ff',
   },
   textarea: {
     marginBottom: '1rem',
@@ -155,12 +156,12 @@ const styles = {
     fontSize: '1rem',
     resize: 'vertical',
     transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
-    backgroundColor: '#f0f4ff', // Soft blue background for textarea
+    backgroundColor: '#f0f4ff',
   },
   button: {
     padding: '0.75rem',
     borderRadius: '8px',
-    backgroundColor: '#000000', // Green button color
+    backgroundColor: '#000000',
     color: '#ff7f50',
     border: 'none',
     width: '100%',
@@ -169,7 +170,7 @@ const styles = {
     transition: 'background-color 0.3s ease, transform 0.2s ease',
   },
   buttonHover: {
-    backgroundColor: '#218838', // Darker green on hover
+    backgroundColor: '#218838',
   },
   alert: {
     padding: '1rem',
@@ -177,23 +178,22 @@ const styles = {
     marginBottom: '1rem',
     textAlign: 'center',
     fontWeight: 'bold',
-    backgroundColor: '#bfff00', // Light green for success messages
+    backgroundColor: '#bfff00',
     color: '#155724',
   },
   alertError: {
-    backgroundColor: '#f8d7da', // Light red for error messages
+    backgroundColor: '#f8d7da',
     color: '#721c24',
   },
 };
 
-// Add global styles for the full-page background
+// Global styles for full-page background and centering
 const globalStyles = {
-  backgroundColor: '#ffc0cb', // Light grey for the entire page
   minHeight: '100vh',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+  backgroundColor: '#ffc0cb',
 };
 
 export default Contact;
-

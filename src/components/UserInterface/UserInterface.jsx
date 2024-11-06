@@ -33,7 +33,7 @@ const UserInterface = () => {
                 </button>
               </a>
               <a 
-                href="#portfolio" 
+                href="#skills" 
                 className="text-yellow-300 text-lg font-semibold border-b-2 border-yellow-300 hover:text-yellow-400"
                 aria-label="View Portfolio"
               >
