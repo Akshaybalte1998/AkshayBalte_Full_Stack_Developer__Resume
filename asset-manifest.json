@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/AkshayBalte_Full_Stack_Developer__Resume/static/css/main.8cbaef4d.css",
-    "main.js": "/AkshayBalte_Full_Stack_Developer__Resume/static/js/main.a6847ac9.js",
+    "main.css": "/AkshayBalte_Full_Stack_Developer__Resume/static/css/main.e6b697d5.css",
+    "main.js": "/AkshayBalte_Full_Stack_Developer__Resume/static/js/main.1c489c01.js",
     "static/media/remixicon.svg?t=1718271040674": "/AkshayBalte_Full_Stack_Developer__Resume/static/media/remixicon.f38690bdde29bddbc211.svg",
     "static/media/cdac.png": "/AkshayBalte_Full_Stack_Developer__Resume/static/media/cdac.670ed68984467db0d148.png",
     "static/media/remixicon.eot?t=1718271040674": "/AkshayBalte_Full_Stack_Developer__Resume/static/media/remixicon.d87042cf9a3f67d1cab2.eot",
     "static/media/remixicon.ttf?t=1718271040674": "/AkshayBalte_Full_Stack_Developer__Resume/static/media/remixicon.88da6179288d7835c2f0.ttf",
     "static/media/btech.png": "/AkshayBalte_Full_Stack_Developer__Resume/static/media/btech.64bc4a87f233f03b8851.png",
+    "static/media/developer.png": "/AkshayBalte_Full_Stack_Developer__Resume/static/media/developer.5d1e0b6756ef34a287be.png",
     "static/media/AgroMart.webp": "/AkshayBalte_Full_Stack_Developer__Resume/static/media/AgroMart.a86b17a9b58f4abaab93.webp",
     "static/media/drug.webp": "/AkshayBalte_Full_Stack_Developer__Resume/static/media/drug.55a7964d2862463ea6cb.webp",
     "static/media/portfolio-02.jpg": "/AkshayBalte_Full_Stack_Developer__Resume/static/media/portfolio-02.252aa09cb6d9c71bebca.jpg",
@@ -22,11 +23,11 @@
     "static/media/hsc.png": "/AkshayBalte_Full_Stack_Developer__Resume/static/media/hsc.a95ad6bda097bbcee119.png",
     "static/media/Aivarient.png": "/AkshayBalte_Full_Stack_Developer__Resume/static/media/Aivarient.017e8a98ffc7896852ff.png",
     "index.html": "/AkshayBalte_Full_Stack_Developer__Resume/index.html",
-    "main.8cbaef4d.css.map": "/AkshayBalte_Full_Stack_Developer__Resume/static/css/main.8cbaef4d.css.map",
-    "main.a6847ac9.js.map": "/AkshayBalte_Full_Stack_Developer__Resume/static/js/main.a6847ac9.js.map"
+    "main.e6b697d5.css.map": "/AkshayBalte_Full_Stack_Developer__Resume/static/css/main.e6b697d5.css.map",
+    "main.1c489c01.js.map": "/AkshayBalte_Full_Stack_Developer__Resume/static/js/main.1c489c01.js.map"
   },
   "entrypoints": [
-    "static/css/main.8cbaef4d.css",
-    "static/js/main.a6847ac9.js"
+    "static/css/main.e6b697d5.css",
+    "static/js/main.1c489c01.js"
   ]
 }
